@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class ShotHole : MonoBehaviour
 {
-    void Start()
-    {
-        //Destroy(gameObject, 7);
-    }
+
 }

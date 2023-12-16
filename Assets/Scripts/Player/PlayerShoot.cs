@@ -21,10 +21,10 @@ public class PlayerShoot : MonoBehaviour
                 enemy.Destroy();
             if (hit.collider.CompareTag("Wall"))
             {
-                var l = hit.point + hit.normal * 0.001f;
+                var hitPosition = hit.point + hit.normal * 0.001f;
                 
-                var new_hole = Instantiate(holePrefab, l, Quaternion.identity);
-                new_hole.transform.LookAt(hit.normal + hit.point);
+                var newHole = Instantiate(holePrefab, hitPosition, Quaternion.identity);
+                newHole.transform.rotation = Quaternion.FromToRotation(newHole.transform.up, hit.normal) * newHole.transform.rotation;
             }
         }
     }
